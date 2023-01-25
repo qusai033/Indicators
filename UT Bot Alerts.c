@@ -1,3 +1,5 @@
+//settings 2, 1
+//goes with linReg candles
 //@version=4
 study(title="UT Bot Alerts", overlay = true)
 
