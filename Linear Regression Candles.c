@@ -1,3 +1,7 @@
+//sittings 7, 11
+//Goes with UT bot
+
+
 //@version=4
 study(title="Humble LinReg Candles", shorttitle="LinReg Candles", format=format.price, precision=4, overlay=true)
 
