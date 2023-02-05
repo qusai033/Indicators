@@ -37,7 +37,7 @@ xATRTrailingStop := iff(src > nz(xATRTrailingStop[1], 0) and src[1] > nz(xATRTra
    iff(src > nz(xATRTrailingStop[1], 0), src - nLoss, src + nLoss)))
  
 pos = 0   
-pos := iff(src[1] < nz(xATRTrailingStop[1], 0) and src > nz(xATRTrailingStop[1], 0), 1,
+pos :=	iff(src[1] < nz(xATRTrailingStop[1], 0) and src > nz(xATRTrailingStop[1], 0), 1,
    iff(src[1] > nz(xATRTrailingStop[1], 0) and src < nz(xATRTrailingStop[1], 0), -1, nz(pos[1], 0))) 
    
 xcolor = pos == -1 ? color.red: pos == 1 ? color.green : color.blue 
@@ -52,8 +52,8 @@ sell = src < xATRTrailingStop and below
 barbuy  = src > xATRTrailingStop 
 barsell = src < xATRTrailingStop 
 
-plotshape(buy,  title = "Buy",  text = 'Buy',  style = shape.labelup,   location = location.belowbar, color= color.green, textcolor = color.white, transp = 0, size = size.tiny)
-plotshape(sell, title = "Sell", text = 'Sell', style = shape.labeldown, location = location.abovebar, color= color.red,   textcolor = color.white, transp = 0, size = size.tiny)
+plotshape(buy,  title = "Buy",  text = 'Buy',  style = shape.labelup,   location = location.belowbar, color= color.green, textcolor = color.white, size = size.tiny)
+plotshape(sell, title = "Sell", text = 'Sell', style = shape.labeldown, location = location.abovebar, color= color.red,   textcolor = color.white, size = size.tiny)
 
 barcolor(barbuy  ? color.green : na)
 barcolor(barsell ? color.red   : na)
